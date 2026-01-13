@@ -13,9 +13,9 @@ st.title("📊 Online Retail Analytics Dashboard")
 
 # ------------------ DATABRICKS CONNECTION ------------------
 conn = sql.connect(
-    server_hostname=st.secrets["DATABRICKS_SERVER_HOSTNAME"],
-    http_path=st.secrets["DATABRICKS_HTTP_PATH"],
-    access_token=st.secrets["DATABRICKS_TOKEN"]
+    server_hostname=st.secrets["databricks"]["server_hostname"],
+    http_path=st.secrets["databricks"]["http_path"],
+    access_token=st.secrets["databricks"]["access_token"]
 )
 
 # ------------------ KPI SECTION ------------------
@@ -112,3 +112,4 @@ st.divider()
 st.caption("📌 Data Source: Databricks Delta Gold Layer | Built by Salma Sherin")
 
 conn.close()
+
