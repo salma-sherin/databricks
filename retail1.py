@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-from databricks import sql
+from databricks.sql import connect
+
 
 # ------------------ PAGE CONFIG ------------------
 st.set_page_config(
@@ -12,7 +13,7 @@ st.set_page_config(
 st.title("📊 Online Retail Analytics Dashboard")
 
 # ------------------ DATABRICKS CONNECTION ------------------
-conn = sql.connect(
+conn = connect(
     server_hostname=st.secrets["databricks"]["server_hostname"],
     http_path=st.secrets["databricks"]["http_path"],
     access_token=st.secrets["databricks"]["access_token"]
@@ -112,4 +113,5 @@ st.divider()
 st.caption("📌 Data Source: Databricks Delta Gold Layer | Built by Salma Sherin")
 
 conn.close()
+
 
