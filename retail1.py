@@ -14,9 +14,9 @@ st.title("📊 Online Retail Analytics Dashboard")
 
 # ------------------ DATABRICKS CONNECTION ------------------
 conn = connect(
-    server_hostname="dbc-6f538b16-3f07.cloud.databricks.com"
-    http_path="/sql/1.0/warehouses/e084d91485202339"
-    access_token="dapi1ae8f27356833250214fdd885d70f12a"
+    server_hostname= "dbc-6f538b16-3f07.cloud.databricks.com"
+    http_path= "/sql/1.0/warehouses/e084d91485202339"
+    access_token= "dapi1ae8f27356833250214fdd885d70f12a"
 )
 
 # ------------------ KPI SECTION ------------------
@@ -113,6 +113,7 @@ st.divider()
 st.caption("📌 Data Source: Databricks Delta Gold Layer | Built by Salma Sherin")
 
 conn.close()
+
 
 
 
